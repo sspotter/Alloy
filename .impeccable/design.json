@@ -1,0 +1,32 @@
+{
+  "name": "Applied AI engineering",
+  "source": "styles.css",
+  "colors": {
+    "paper": "#f5f4ee",
+    "ink": "#232b24",
+    "muted": "#64695f",
+    "line": "#dadcd1",
+    "green": "#335b43",
+    "forest": "#243b2c",
+    "lime": "#d7e3b8"
+  },
+  "typography": {
+    "family": "Manrope, sans-serif",
+    "displaySize": "clamp(60px,6.6vw,92px)",
+    "displayWeight": 500,
+    "displayLineHeight": 1.02,
+    "displayTracking": "-0.04em",
+    "bodySize": "15px",
+    "bodyLineHeight": 1.65,
+    "emphasisFamily": "Georgia, serif"
+  },
+  "layout": {
+    "containerMax": "1240px",
+    "breakpoints": [370,760,1050,1600],
+    "desktopGutterTotal": "96px",
+    "mobileGutterTotal": "40px"
+  },
+  "radii": { "panel": "12px", "button": "5px" },
+  "focus": { "outline": "2px solid #335b43", "offset": "5px" },
+  "motion": { "diagramPulse": "4s ease-out infinite", "reducedMotion": "disabled" }
+}
