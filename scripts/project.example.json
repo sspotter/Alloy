@@ -1,0 +1,16 @@
+{
+  "id": "your-project",
+  "title": "Your project name",
+  "category": "tools",
+  "status": "Working prototype",
+  "value": "A clear one-line benefit for the people using it.",
+  "description": "Describe what the project does and what makes its engineering interesting.",
+  "tags": ["Developer tools", "Desktop"],
+  "images": [
+    { "src": "../assets/docviewer-showcase.png", "alt": "Replace with a description of your first screenshot", "caption": "Main interface" },
+    { "src": "../assets/docviewer-split.png", "alt": "Replace with a description of your second screenshot", "caption": "A second view" }
+  ],
+  "detailsTitle": "How it works",
+  "details": "Add the technical story, the project's status, and the capabilities it demonstrates.",
+  "actions": [{ "label": "Explore the project", "details": true }]
+}

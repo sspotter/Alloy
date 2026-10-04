@@ -1,0 +1,229 @@
+[
+  {
+    "id": "guardian",
+    "title": "Guardian RAG",
+    "category": "ai",
+    "featured": true,
+    "status": "Working prototype",
+    "statusTone": "positive",
+    "value": "Enterprise RAG with security built into retrieval.",
+    "description": "Access-controlled retrieval, passage-level classification, PostgreSQL row-level security and tamper-evident auditing — filtering sensitive context before it ever reaches the model.",
+    "tags": [
+      "Secure AI",
+      "RAG",
+      "Access control",
+      "PostgreSQL"
+    ],
+    "images": [
+      {
+        "src": "assets/guardian.jpg",
+        "alt": "Guardian RAG showing a cited answer and confidential source passage for an HR manager",
+        "caption": "Actual project interface · HR manager view"
+      }
+    ],
+    "visualLabel": "Permission-aware retrieval",
+    "detailsTitle": "The right answer, for the right person.",
+    "detailsHtml": "<p>A policy assistant must respect the permissions of the person asking. Guardian RAG checks access before search, enforces it inside PostgreSQL, and checks again before returning an answer. The example interface shows an HR manager receiving a cited answer from a confidential section; the same question is withheld for other roles.</p><div class=\"architecture\"><span>Question + role</span><b>→</b><span>Permission-aware search</span><b>→</b><span>Cited answer + audit</span></div><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> secure retrieval, database access control, and auditable AI system design.</p>",
+    "actions": [
+      {
+        "label": "View case study",
+        "details": true
+      },
+      {
+        "label": "View source",
+        "href": "https://github.com/YousefHlaly/guardian-rag"
+      }
+    ]
+  },
+  {
+    "id": "autoft",
+    "title": "AutoFT",
+    "category": "ai",
+    "featured": false,
+    "status": "Experimental",
+    "statusTone": "experimental",
+    "value": "Models that know when they need to improve.",
+    "description": "A self-maintaining LLM pipeline that detects performance drift, fine-tunes locally with QLoRA, and promotes a model only when it measurably outperforms production.",
+    "tags": [
+      "LLM ops",
+      "QLoRA",
+      "Evaluation",
+      "Model lifecycle"
+    ],
+    "images": [
+      {
+        "src": "assets/autoft.jpg",
+        "alt": "AutoFT training run and model promotion check with the result HOLD",
+        "caption": ""
+      }
+    ],
+    "visualLabel": "Improvement, with a gate.",
+    "detailsTitle": "Knowing when not to ship.",
+    "detailsHtml": "<p>AutoFT watches real questions, statistically detects distribution drift, decides whether retraining is worth the GPU time, and fine-tunes on local hardware. A held-out evaluation compares the candidate with the incumbent. In its documented run, the promotion gate returned HOLD because the improvement was within measurement noise.</p><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> model evaluation, automated fine-tuning, and production ML lifecycle engineering.</p>",
+    "actions": [
+      {
+        "label": "Explore the pipeline",
+        "details": true
+      },
+      {
+        "label": "View source",
+        "href": "https://github.com/YousefHlaly/AutoFT"
+      }
+    ],
+    "visualIntroHtml": "<div class=\"pipeline\"><span>Monitor</span><b>→</b><span>Evaluate</span><b>→</b><span>Fine-tune</span><b>→</b><span class=\"gate\">Hold / promote</span></div>"
+  },
+  {
+    "id": "kronos",
+    "title": "KRONOS",
+    "category": "ai",
+    "featured": false,
+    "status": "Case study",
+    "statusTone": "neutral",
+    "value": "Build and orchestrate AI agents visually.",
+    "description": "A local-first environment for designing, running, evaluating and fine-tuning multi-agent workflows — bringing orchestration and experimentation into one workspace.",
+    "tags": [
+      "AI agents",
+      "Multi-agent",
+      "Local-first",
+      "Orchestration"
+    ],
+    "images": [
+      {
+        "src": "assets/kronos.jpg",
+        "alt": "KRONOS visual agent canvas with a document collection, tool-calling agent, and live trace",
+        "caption": ""
+      }
+    ],
+    "visualLabel": "One canvas. Connected workflows.",
+    "detailsTitle": "From a workflow to its whole lifecycle.",
+    "detailsHtml": "<p>KRONOS connects agents, retrieval, data processing, fine-tuning, and evaluation through a visual canvas. The supplied screenshot shows an agent answering from a document collection with a live trace. The public showcase documents the architecture; implementation source is available for review on request.</p><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> agent orchestration, visual workflow design, and integrated AI evaluation.</p>",
+    "actions": [
+      {
+        "label": "View case study",
+        "href": "https://yousefhlaly.github.io/kronos-showcase/"
+      },
+      {
+        "label": "Explore architecture",
+        "href": "https://github.com/YousefHlaly/kronos-showcase"
+      }
+    ]
+  },
+  {
+    "id": "swarminal",
+    "title": "Swarminal",
+    "category": "tools",
+    "featured": false,
+    "status": "Mazen’s project",
+    "statusTone": "neutral",
+    "value": "A development environment built for parallel AI agents.",
+    "description": "A desktop IDE where terminal panes run shells and coding agents simultaneously. Divide work across agents, monitor sessions, and coordinate development in one workspace.",
+    "tags": [
+      "Developer tools",
+      "AI agents",
+      "Terminal",
+      "Parallel workflows"
+    ],
+    "images": [
+      {
+        "src": "assets/swarminal-multi-agent.png",
+        "alt": "Swarminal desktop showing six real terminal panes for multiple coding agents and shells",
+        "caption": "Actual project interface · BridgeMind-PTY build"
+      },
+      {
+        "src": "assets/swarminal-git.png",
+        "alt": "Swarminal Git repository view",
+        "caption": "Repository tools alongside terminal sessions"
+      },
+      {
+        "src": "assets/swarminal-docs.png",
+        "alt": "Swarminal Markdown preview",
+        "caption": "Documentation preview inside the workspace"
+      }
+    ],
+    "visualLabel": "Parallel work. One workspace.",
+    "detailsTitle": "Real terminals, working side by side.",
+    "detailsHtml": "<p>Built by Mazen Sarwat Ismail, Swarminal combines an Electron desktop shell, a React interface, and node-pty terminal sessions. Each pane can run a shell or CLI coding agent, keeping parallel sessions visible in a single workspace.</p><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> desktop engineering, terminal integration, and tools for parallel agent development.</p>",
+    "actions": [
+      {
+        "label": "Explore the project",
+        "details": true
+      },
+      {
+        "label": "View source",
+        "href": "https://github.com/sspotter/Swarminal"
+      }
+    ]
+  },
+  {
+    "id": "nest",
+    "title": "Nest Invest",
+    "category": "ml",
+    "featured": false,
+    "status": "Graduation project",
+    "statusTone": "neutral",
+    "value": "Machine learning meets market simulation.",
+    "description": "A trading simulation platform combining financial workflows with an LSTM forecasting service, exploring how predictive ML integrates into interactive investment systems.",
+    "tags": [
+      "Machine learning",
+      "LSTM",
+      "Fintech",
+      "Forecasting"
+    ],
+    "images": [],
+    "visualLabel": "Where prediction meets simulation.",
+    "illustrationHtml": "<div class=\"visual-label\"><span>Nest Invest</span><span>Where prediction meets simulation.</span></div><div class=\"nest-art\"><span>Explore.<br>Forecast.<br><em>Learn.</em></span><svg viewBox=\"0 0 240 160\" role=\"img\" aria-label=\"Illustrative forecast curve\"><path d=\"M10 145H230M10 145V15\" fill=\"none\" stroke=\"#aaac9d\"></path><path d=\"m10 125 22-8 22 9 22-30 22 13 22-31 22 8 22-37\" fill=\"none\" stroke=\"#3d6650\" stroke-width=\"3\"></path><path d=\"m164 49 22-11 22 8 22-28\" fill=\"none\" stroke=\"#3d6650\" stroke-width=\"3\" stroke-dasharray=\"5 5\"></path><circle cx=\"164\" cy=\"49\" r=\"5\" fill=\"#3d6650\"></circle><text x=\"173\" y=\"145\" fill=\"#656c5d\" font-size=\"10\" font-family=\"Manrope\">FORECAST</text></svg></div><span class=\"illustration-note\">Concept illustration · not market data</span>",
+    "detailsTitle": "A shared project in applied machine learning.",
+    "detailsHtml": "<p>Nest Invest is a graduation project graded A, with AI engineering by Yousef and frontend engineering by Osama. A MERN application connects interactive trading simulation with an LSTM forecasting service. The frontend uses React, Tailwind, Recharts, and React Query. Source code is private.</p><div class=\"architecture\"><span>React interface</span><b>→</b><span>Application APIs</span><b>→</b><span>LSTM forecasting</span></div><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> predictive ML integration, data visualization, and full-stack product delivery.</p>",
+    "actions": [
+      {
+        "label": "View case study",
+        "details": true
+      },
+      {
+        "label": "Explore architecture",
+        "details": true
+      }
+    ]
+  },
+  {
+    "id": "docviewer",
+    "title": "DocViewer",
+    "category": "tools",
+    "featured": true,
+    "status": "Mazen’s project",
+    "statusTone": "neutral",
+    "value": "A workspace for the knowledge behind the code.",
+    "description": "A documentation viewer that brings Markdown, HTML, syntax-highlighted code, and Mermaid diagrams into one workspace — with split editing, document history, and CLI integration for agent-generated reports.",
+    "tags": [
+      "Developer tools",
+      "Markdown",
+      "Mermaid",
+      "Desktop workflows"
+    ],
+    "images": [
+      {
+        "src": "assets/docviewer-showcase.png",
+        "alt": "DocViewer rendering a Markdown reference document with preview, raw and split modes, and document actions",
+        "caption": "Actual project interface · Markdown preview"
+      },
+      {
+        "src": "assets/docviewer-split.png",
+        "alt": "DocViewer source editor and live preview side by side",
+        "caption": "Split editing: source and live preview"
+      }
+    ],
+    "visualLabel": "Readable documents. Connected workflows.",
+    "detailsTitle": "Keep the thinking connected to the work.",
+    "detailsHtml": "<p>Built by Mazen Sarwat Ismail, DocViewer makes engineering documents easier to read, edit, and navigate. Its documented features include a tabbed workspace, live Markdown preview, syntax-highlighted code, searchable navigation, Mermaid rendering with pan and zoom, HTML preview, and document history.</p><p>The React and TypeScript interface runs inside a Tauri desktop shell. A cached rendering pipeline brings together Markdown parsing, code highlighting, and diagram rendering. The desktop CLI can create a UTF-8 document and open it in the viewer; Claude Code live mode follows documents written by an agent without taking focus from an already-open workspace.</p><div class=\"architecture\"><span>Files + CLI / agent output</span><b>→</b><span>Rendering + cache</span><b>→</b><span>Preview / source / split</span></div><p class=\"demonstrates\"><strong>Capability demonstrated:</strong> desktop product engineering, document rendering, developer workflow integration, and usable interfaces for technical knowledge.</p>",
+    "actions": [
+      {
+        "label": "Explore the project",
+        "details": true
+      },
+      {
+        "label": "Explore architecture",
+        "details": true
+      }
+    ]
+  }
+]

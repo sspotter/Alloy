@@ -6,6 +6,11 @@
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node --check app.js && node --check server.mjs"
+    "check": "node --check app.js && node --check server.mjs && node --check scripts/project-builder.mjs && node --check scripts/add-project.mjs && node --check scripts/manage-projects.mjs && node --check scripts/add-cv.mjs",
+    "projects": "node scripts/manage-projects.mjs",
+    "project:add": "node scripts/manage-projects.mjs add",
+    "projects:build": "node scripts/project-builder.mjs",
+    "test": "node --test scripts/projects.test.mjs",
+    "cv:add": "node scripts/add-cv.mjs"
   }
 }
