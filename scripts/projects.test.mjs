@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { renderProjects, updatePage, validateProjects } from './project-builder.mjs';
 import { addProject } from './add-project.mjs';
-import { removeProject, validProjectUrl } from './manage-projects.mjs';
+import { removeProject, validProjectUrl, editProject } from './manage-projects.mjs';
 
 const sample = () => ({ id: 'example', title: 'Example <tool>', category: 'tools',
   value: 'Read & build', description: 'A useful workspace.', tags: ['Desktop'],
@@ -50,6 +50,22 @@ test('adds a project, copies images, rebuilds page and refuses duplicates', asyn
     assert.equal(data.length, 1);
     assert.equal(await readFile(join(root, data[0].images[0].src), 'utf8'), 'image fixture');
     assert.match(await readFile(join(root, 'index.html'), 'utf8'), /Example &lt;tool&gt;/);
+    const originalImage = data[0].images[0];
+    const edited = await editProject(root, '123', { title: 'Updated project', images: [originalImage, { src: 'source.png', alt: 'Another view', caption: 'Second screenshot' }] }, root);
+    assert.equal(edited.images.length, 2);
+    assert.equal(edited.description, config.description);
+    assert.equal(edited.images[0].src, originalImage.src);
+    assert.notEqual(edited.images[1].src, originalImage.src);
+    assert.equal(await readFile(join(root, edited.images[1].src), 'utf8'), 'image fixture');
+    assert.match(await readFile(join(root, 'index.html'), 'utf8'), /Updated project/);
+    await editProject(root, '123', { images: [...edited.images].reverse() });
+    const reordered = JSON.parse(await readFile(join(root, 'scripts/projects.json'), 'utf8'))[0];
+    assert.equal(reordered.images[0].alt, 'Another view');
+    const beforeFailure = await readFile(join(root, 'scripts/projects.json'), 'utf8');
+    await assert.rejects(editProject(root, '123', { images: [{ src: 'absent.png', alt: 'Missing' }] }, root), /ENOENT/);
+    assert.equal(await readFile(join(root, 'scripts/projects.json'), 'utf8'), beforeFailure);
+    await editProject(root, '123', { images: [originalImage] });
+    assert.equal(await readFile(join(root, edited.images[1].src), 'utf8'), 'image fixture');
     await assert.rejects(addProject(root, config, root), /Duplicate/);
     await assert.rejects(addProject(root, { ...config, id: 'missing', images: [{ src: 'absent.png', alt: 'Missing' }] }, root), /ENOENT/);
     assert.equal(JSON.parse(await readFile(join(root, 'scripts/projects.json'), 'utf8')).length, 1);
@@ -60,6 +76,10 @@ test('adds a project, copies images, rebuilds page and refuses duplicates', asyn
     const output = execFileSync(process.execPath, [join(root, 'scripts/add-project.mjs'), '--file', join(root, 'import.json')], { encoding: 'utf8' });
     assert.match(output, /Added Example/);
     assert.equal(JSON.parse(await readFile(join(root, 'scripts/projects.json'), 'utf8')).length, 2);
+    await writeFile(join(root, 'patch.json'), JSON.stringify({ description: 'Edited through CLI' }));
+    const editOutput = execFileSync(process.execPath, [join(root, 'scripts/manage-projects.mjs'), 'edit', 'cli-project', join(root, 'patch.json')], { encoding: 'utf8' });
+    assert.match(editOutput, /Updated Example/);
+    assert.match(await readFile(join(root, 'index.html'), 'utf8'), /Edited through CLI/);
     await removeProject(root, 'cli-project');
     assert.equal(JSON.parse(await readFile(join(root, 'scripts/projects.json'), 'utf8')).length, 1);
     assert.doesNotMatch(await readFile(join(root, 'index.html'), 'utf8'), /cli-project/);

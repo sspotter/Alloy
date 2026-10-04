@@ -11,7 +11,7 @@ createServer(async (request, response) => {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
     const path = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
     const relative = path.slice(root.length + 1);
-    const allowed = ['index.html', 'styles.css', 'app.js'].includes(relative) || relative.startsWith('assets' + sep);
+    const allowed = ['index.html', 'signal-flow.html', 'styles.css', 'app.js'].includes(relative) || relative.startsWith('assets' + sep);
     if (!path.startsWith(root + sep) || !allowed) {
       response.writeHead(404).end('Not found');
       return;

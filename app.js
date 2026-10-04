@@ -2,17 +2,44 @@ const projects = [...document.querySelectorAll('.project')];
 const filterButtons = [...document.querySelectorAll('[data-filter]')];
 
 const imageDialog = document.querySelector('#image-dialog');
+let popupImages = [];
+let popupIndex = 0;
+
+function showPopupImage() {
+  const trigger = popupImages[popupIndex];
+  const image = trigger.querySelector('img');
+  const preview = imageDialog.querySelector('img');
+  preview.src = image.src;
+  preview.alt = image.alt;
+  preview.classList.toggle('portrait', Boolean(trigger.closest('.team-avatar')));
+  imageDialog.querySelector('figcaption').textContent = trigger.closest('figure')?.querySelector('figcaption')?.textContent || image.alt;
+  imageDialog.querySelector('.popup-count').textContent = `${popupIndex + 1} / ${popupImages.length}`;
+  imageDialog.querySelector('.image-frame').classList.toggle('single-image', popupImages.length === 1);
+  imageDialog.querySelectorAll('[data-popup-step]').forEach(button => { button.hidden = popupImages.length < 2; });
+}
+
+function stepPopupImage(step) {
+  popupIndex = (popupIndex + step + popupImages.length) % popupImages.length;
+  showPopupImage();
+}
+
 document.querySelectorAll('[data-image-popup]').forEach((trigger) => {
   trigger.addEventListener('click', (event) => {
     event.preventDefault();
-    const image = trigger.querySelector('img');
-    const preview = imageDialog.querySelector('img');
-    preview.src = image.src;
-    preview.alt = image.alt;
-    preview.classList.toggle('portrait', Boolean(trigger.closest('.team-avatar')));
-    imageDialog.querySelector('figcaption').textContent = trigger.closest('figure')?.querySelector('figcaption')?.textContent || image.alt;
+    const group = trigger.closest('[data-gallery]') || trigger.closest('.team-grid');
+    popupImages = group ? [...group.querySelectorAll('[data-image-popup]')] : [trigger];
+    popupIndex = popupImages.indexOf(trigger);
+    showPopupImage();
     imageDialog.showModal();
   });
+});
+imageDialog.querySelectorAll('[data-popup-step]').forEach(button => {
+  button.addEventListener('click', () => stepPopupImage(Number(button.dataset.popupStep)));
+});
+imageDialog.addEventListener('keydown', (event) => {
+  if (popupImages.length < 2 || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  stepPopupImage(event.key === 'ArrowLeft' ? -1 : 1);
 });
 imageDialog.querySelector('[data-close-image]').addEventListener('click', () => imageDialog.close());
 imageDialog.addEventListener('click', (event) => {

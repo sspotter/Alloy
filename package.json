@@ -11,6 +11,7 @@
     "project:add": "node scripts/manage-projects.mjs add",
     "projects:build": "node scripts/project-builder.mjs",
     "test": "node --test scripts/projects.test.mjs",
-    "cv:add": "node scripts/add-cv.mjs"
+    "cv:add": "node scripts/add-cv.mjs",
+    "qr": "node scripts/create-qr.mjs"
   }
 }

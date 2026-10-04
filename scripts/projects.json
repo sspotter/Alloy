@@ -210,6 +210,31 @@
         "src": "assets/docviewer-split.png",
         "alt": "DocViewer source editor and live preview side by side",
         "caption": "Split editing: source and live preview"
+      },
+      {
+        "src": "assets/docviewer-f55f3f95-0d18-4f47-b46d-ae6993deec7e.png",
+        "alt": "raw source",
+        "caption": "raw source"
+      },
+      {
+        "src": "assets/docviewer-0bc9e703-711e-4c4a-a24c-e2c1460455f6.png",
+        "alt": "command pallet",
+        "caption": "command pallet"
+      },
+      {
+        "src": "assets/docviewer-770120b8-53d8-4377-83bd-79fc68dd309e.png",
+        "alt": "sticky notes",
+        "caption": "sticky notes"
+      },
+      {
+        "src": "assets/docviewer-ae08c908-beb4-45dd-a524-e1f935cd82f9.png",
+        "alt": "mermaid diagrams",
+        "caption": "mermaid diagrams"
+      },
+      {
+        "src": "assets/docviewer-fe7ed11d-d74e-4486-8fff-4672000c2a05.png",
+        "alt": "tab right click",
+        "caption": "tab right click"
       }
     ],
     "visualLabel": "Readable documents. Connected workflows.",

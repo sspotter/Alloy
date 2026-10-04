@@ -1,0 +1,103 @@
+:root {
+  --paper: #0b241c;
+  --ink: #f1f4e9;
+  --muted: #b8c9ba;
+  --line: #345043;
+  --green: #d5f49c;
+  --forest: #14382b;
+  --lime: #d5f49c;
+}
+body { background: #0b241c; color-scheme: dark; }
+.skip-link { background: #d5f49c; color: #132b1c; }
+::selection { background: #d5f49c; color: #0b241c; }
+:focus-visible { outline-color: #d5f49c !important; }
+html { scrollbar-color: #718b65 #0b241c; }
+.site-header { position: relative; z-index: 2; min-height: 104px; border-color: #345043; }
+.brand-logo { filter: brightness(1.8) saturate(.7); }
+.header-contact { border-color: #79907c; }
+.flow-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 58px 0 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 73%, #20422a 0, #102f23 37%, #0b241c 72%);
+}
+.flow-hero .hero-copy { position: relative; z-index: 1; text-align: center; width: min(1100px, calc(100% - 48px)); }
+.flow-hero h1 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(48px, 6.1vw, 88px); line-height: 1.1; letter-spacing: -.035em; }
+.flow-hero h1 em { color: #e7f1d3; }
+.flow-hero .hero-copy > p:first-of-type { margin-top: 22px; font-size: 17px; color: #d1dfc6; }
+.flow-hero .hero-description { max-width: 640px; margin: 13px auto 0; color: #b8c9ba; font-size: 14px; }
+.flow-hero .hero-actions { justify-content: center; margin-top: 26px; gap: 30px; }
+.flow-hero .button.dark { background: #d5f49c; color: #132b1c; padding: 16px 24px; }
+.flow-hero .button.dark:hover { background: #e5ffbc; }
+.flow-hero .text-link { color: #e9f1dc; }
+.flow-stage { position: relative; width: 100%; height: clamp(310px, 28vw, 420px); margin-top: -6px; }
+.flow-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
+.flow-core {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 108px; height: 108px; border-radius: 50%; border: 1px solid #cce993;
+  background: radial-gradient(circle, #5a763c 0, #1e4029 66%);
+  display: grid; place-items: center;
+  box-shadow: 0 0 32px #d5f49c40, inset 0 0 20px #d5f49c18;
+  pointer-events: none;
+}
+.flow-core img { width: 62px; filter: brightness(2) saturate(.5); }
+.flow-core span { position: absolute; top: calc(100% + 12px); color: #d2dfbd; font-size: 12px; letter-spacing: .16em; }
+.flow-label { position: absolute; color: #d2dfbd; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; pointer-events: none; }
+.flow-label.knowledge { left: 9%; top: 28%; }
+.flow-label.people { left: 15%; top: 76%; }
+.flow-label.systems { right: 12%; top: 25%; }
+.flow-label.improvement { right: 7%; top: 74%; }
+.flow-caption { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font-size: 12px; text-align: center; white-space: nowrap; color: #b8c9ba; }
+.flow-hero .hero-foot { width: min(1240px, calc(100% - 96px)); margin: 22px auto 0; padding: 23px 0; gap: 15px; }
+.project { background: #102d22; border-color: #345043; }
+.project-details { background: #16382b; }
+.project-details .architecture span { background: #244635; }
+.project-media { background: #e5e8df; color: #232b24; }
+.project-media .visual-label { color: #243b2c; }
+.project-media .pipeline { color: #46573c; }
+.project-media .gallery-controls button { color: #243b2c; background: #f5f4ee; }
+.project-media .gallery-count { color: #243b2c; }
+.nest-visual { background: #293e2d; }
+.nest-art em { color: #d5f49c; }
+.tags li { color: #b8c9ba; }
+.filters button.active { background: #d5f49c; color: #132b1c; }
+.filters button span { color: inherit; }
+.capabilities { background: #133327; }
+.capability-list > div { border-color: #345043; }
+.contact-panel { background: #1b402e; color: #f1f4e9; }
+.contact-panel .button { background: #d5f49c; color: #132b1c; }
+.contact-panel .button:hover { background: #e5ffbc; }
+.team-email { background: #d5f49c; color: #132b1c; }
+.team-email:hover { background: #e5ffbc; }
+.image-dialog { background: #102d22; }
+.image-nav { background: #1b402e; color: #d5f49c; }
+.image-nav:hover, .image-close:hover { background: #345043; }
+.demo-email:hover { color: #e5ffbc; }
+@media (min-width: 1500px) { .flow-hero { padding-top: 76px; } }
+@media (max-width: 760px) {
+  .site-header { min-height: 88px; }
+  .flow-hero { padding-top: 45px; }
+  .flow-hero .hero-copy { width: calc(100% - 40px); }
+  .flow-hero h1 { font-size: clamp(42px, 9.5vw, 65px); line-height: 1.12; }
+  .flow-hero .hero-copy > p:first-of-type { font-size: 15px; margin-top: 22px; }
+  .flow-hero .hero-description { font-size: 13px; max-width: 440px; }
+  .flow-hero .hero-actions { gap: 20px; flex-wrap: wrap; }
+  .flow-stage { height: 300px; margin-top: 8px; }
+  .flow-core { width: 78px; height: 78px; }
+  .flow-core img { width: 46px; }
+  .flow-label { font-size: 11px; letter-spacing: .04em; }
+  .flow-label.knowledge { left: 5%; top: 22%; }
+  .flow-label.people { left: 9%; top: 77%; }
+  .flow-label.systems { right: 5%; top: 24%; }
+  .flow-label.improvement { right: 4%; top: 75%; max-width: 85px; }
+  .flow-caption { font-size: 11px; white-space: normal; width: calc(100% - 40px); }
+  .flow-hero .hero-foot { width: calc(100% - 40px); margin-top: 20px; flex-direction: column; text-align: center; gap: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

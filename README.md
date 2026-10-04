@@ -86,3 +86,76 @@ npm run cv:add mazen "path/to/mazen-cv.pdf"
 ```
 
 You can supply a public HTTPS CV URL instead of a local PDF. The script updates only the selected team member's CV link. The source PDFs in `data/cvs/` are not exposed by the preview server. Team portraits also open in the image popup.
+
+
+## Edit projects and images
+
+Run `npm run projects` and choose **Edit project** or **Manage project images**. Select a project by its listed ID. You can also go straight to a project:
+
+```sh
+npm run projects edit swarminal
+npm run projects images swarminal
+```
+
+Editing lets you change the name, value proposition, description, status, visual label, expanded-details title, category, tags, expanded details, project link, and featured layout. Press Enter to keep a field. Use `-` to clear tags or remove external project links. Entering new expanded details replaces the previous expanded story; leaving it blank keeps that story.
+
+The image menu lets you add screenshots, replace all screenshots, reorder them, remove an image, or edit its alt text and caption. Separate multiple new file paths with `|`; quoted Windows paths are supported. The first image in the list is the main image. Enter all image numbers in a new order (for example `3,1,2`) to change the main image. New files get unique names in `assets/` so existing files are not overwritten. Removing an image from the gallery retains the file. A project needs at least one image unless it already has an illustration.
+
+Choose **Save** in the image menu to apply all edits and rebuild the website. Refresh your browser to see the result. Changes to a deployed website still need to be committed and deployed.
+
+For a repeatable edit, create a JSON file containing only the fields to change:
+
+```json
+{
+  "description": "Your updated description",
+  "images": [
+    { "src": "assets/swarminal-multi-agent.png", "alt": "Six terminal panes", "caption": "Main workspace" },
+    { "src": "new-screenshot.png", "alt": "A new feature in use", "caption": "New feature" }
+  ]
+}
+```
+
+```sh
+npm run projects edit swarminal scripts/my-patch.json
+```
+
+An `images` array replaces the current list, so include existing images you want to keep. Paths beginning with `assets/` reference existing website assets; other paths resolve relative to the patch JSON file. Omit `images` to leave the gallery unchanged. Project IDs stay fixed.
+
+
+Inside the image popup, use the previous/next buttons or Left/Right arrow keys to browse the current project’s screenshots. Navigation wraps at the ends, updates the caption and image counter, and is hidden for a single image. Portrait popups browse the three collaborators. Escape, Close, or a backdrop click dismisses the popup.
+
+
+## Website QR assets
+
+`assets/branding/alloy-tech-website-qr-card.png` is the shareable branded card with the tagline “Different strengths. Better systems.” The standalone code is available as `alloy-tech-website-qr.png` and `alloy-tech-website-qr.svg` in the same folder. These point to `https://alloy-tech.vercel.app/` and retain a white quiet zone and high error correction around the center logo. Recreate them with `python scripts/create-website-qr.py` using Pillow, qrcode, and zxing-cpp. The script verifies decoding of the standalone PNG, complete card, and a reduced-size PNG.
+
+
+## Generate a QR with custom text
+
+Run the interactive helper and enter the destination URL and bottom description:
+
+```sh
+npm run qr
+```
+
+Or pass them directly (quote the description):
+
+```sh
+npm run qr "https://alloy-tech.vercel.app/" "Scan to discover what we build together."
+```
+
+An optional third argument changes the filename prefix, so you can keep multiple versions:
+
+```sh
+npm run qr "https://alloy-tech.vercel.app/" "Meet Alloy Tech at your next event." "event"
+```
+
+Files are saved under `assets/branding/` as `<prefix>-qr-card.png`, `<prefix>-qr.png`, and `<prefix>-qr.svg`. The default prefix is `alloy-tech-website`; generating the same prefix replaces its previous files. An optional fourth argument selects another output directory. The logo and brand styling stay consistent. Descriptions wrap automatically; excessively long descriptions are rejected with a clear error.
+
+For a custom small footer or named flags, run the Node entry point directly (this also avoids PowerShell's handling of npm flags):
+
+```sh
+node scripts/create-qr.mjs --url "https://alloy-tech.vercel.app/" --description "Different strengths. Better systems." --footer "Scan to meet the team" --name "team"
+```
+
+The helper finds a Python runtime with Pillow, qrcode, and zxing-cpp installed. If needed, run `python -m pip install -r scripts/qr-requirements.txt`, or set `ALLOY_PYTHON` to the Python executable you want to use. You can also call `python scripts/create-website-qr.py` directly with the same flags. The QR, full card, and a reduced-size version are decoded and checked against your URL before files are saved.
