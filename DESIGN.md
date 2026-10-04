@@ -53,7 +53,7 @@ Panels use solid surfaces and single borders. Soft offset shadows lift real proj
 
 ## Shapes
 
-Panels use 12px corners; buttons use 5px corners. Tags and status badges use smaller corners. Team portraits use circular crops of the supplied PNGs. Inline SVGs provide a consistent arrow system.
+Panels use 12px corners; buttons use 5px corners. Tags and status badges use smaller corners. Team portraits use large grayscale cutouts of the supplied transparent PNGs, without colored backgrounds. Inline SVGs provide a consistent arrow system.
 
 ## Components
 
@@ -69,4 +69,14 @@ Project filters update visible cards and the announced count. Detail buttons exp
 - Keep source links secondary to project storytelling.
 - Use the established SVG arrow system for CTAs.
 
-Team portraits use the original PNGs in assets/collabs/ in 88px circular frames (72px on mobile), with CSS cropping tailored to the portrait. Individual email buttons sit below the existing profile links.
+Team portraits use the original PNGs in assets/collabs/ in 300px transparent frames (240px on mobile), displayed in grayscale, with CSS cropping tailored to the portrait. Individual email buttons sit below the existing profile links.
+
+Swarminal and DocViewer use real screenshots on muted surfaces. DocViewer spans both desktop project columns, keeping the six-project grid balanced; all projects stack on mobile. Expanded details include screenshot galleries with links to full-size source images.
+
+The closing live-demo strip pairs a scannable demo-request email QR with an email invitation and source note. Its three-column desktop composition collapses to two columns plus a full-width note on mobile. Fine-pointer hover rotates the hero diagram from -2deg to +1.5deg and shifts forest green to muted teal with pale mint diagram accents. Reduced-motion preferences disable rotation and transitions.
+
+The demo QR and adjacent email link compose an email to mamdouhy614@gmail.com with maz.sarwat@gmail.com and osama.ashur.mokhtar@gmail.com CC’d and subject Guardian RAG live demo. Mazen’s profile button uses his confirmed individual address.
+
+All three team profiles have individual email conversation links and user-confirmed external portfolio destinations.
+
+Team cards use a vertical flex layout with flexible description space so profile links and conversation buttons align across each desktop row despite different copy lengths. Alloy is the selected future parent brand; a coordinated identity and logo rollout is pending.

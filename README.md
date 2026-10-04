@@ -6,7 +6,7 @@ Run `npm run dev`, then open http://localhost:5173. No dependency installation i
 
 Deploy `index.html`, `styles.css`, `app.js`, and `assets/` to a static host. The local server serves those public files only; it does not expose the source PDFs or project documentation.
 
-The page includes category filters, expandable project details, real project screenshots extracted from the supplied About Us PDF, team profiles, and email contact links. Swarminal and Nest Invest visuals are labeled illustrations.
+The page includes category filters, expandable project details, real project screenshots extracted from the supplied About Us PDF, team profiles, and email contact links. Swarminal and DocViewer use original project screenshots; Nest Invest retains a labeled illustration. Expanded project details include full-size screenshot links.
 
 Edit branding and copy in `index.html`, visual tokens in `styles.css`, and filter/detail behavior in `app.js`. The font is served locally. Screenshots retain their source attribution in `assets/PROVENANCE.md`.
 

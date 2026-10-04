@@ -11,4 +11,13 @@
 - Hero diagram, terminal example, and forecast curve: original inline SVG/HTML geometry, based on supplied project descriptions. Examples are illustrative, not product screenshots or performance data.
 
 
-- collabs/joe.png, collabs/osama.png, collabs/maz.png: original portraits supplied by the user for Yousef, Osama, and Mazen respectively. Displayed with circular CSS crops; source PNGs unchanged.
+- collabs/joe.png, collabs/osama.png, collabs/maz.png: original portraits supplied by the user for Yousef, Osama, and Mazen respectively. Displayed as large grayscale cutouts on transparent backgrounds; source PNGs unchanged.
+
+- swarminal-multi-agent.png: original user-selected screenshot from E:/codinnnn/Bridgmind_pty/assests/screenshots/xx-multi-agent-panes.png. The visible build name is BridgeMind-PTY.
+- swarminal-git.png and swarminal-docs.png: original screenshots from the same directory, git-repo.png and md-preview.png.
+- docviewer-showcase.png: original sample-showcase.png from E:/Cooddinnn2026/md-viewer/docs/project-readme/screenshots/.
+- docviewer-split.png: original 07-split-view.png from E:/Cooddinnn2026/md-viewer/docs/screenshots/.
+
+- guardian-source-qr.svg: generated QR encoding https://github.com/YousefHlaly/guardian-rag with medium error correction and a four-module quiet zone.
+
+- live-demo-email-qr.svg: QR encoding mailto:mamdouhy614@gmail.com?subject=Guardian%20RAG%20live%20demo&cc=maz.sarwat%40gmail.com%2Cosama.ashur.mokhtar%40gmail.com, with medium error correction and a four-module quiet zone.
