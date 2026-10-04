@@ -1,0 +1,3 @@
+Generated using the built-in imagegen tool from the approved design 12 reference.
+
+Prompt: Create a precise flat vector-style extraction of only the triangular AT logo in the reference. Actual transparent background and fully transparent T-shaped negative space. Hard crisp fully opaque colored shapes only, no glow, halos, shadows, feathering or dark backdrop. Keep the faceted broad triangular A with a flat gently rounded apex and transparent T cutout identical to the reference. Facets use subtle sage #a7b78d to forest #24523e linear gradients. No wordmark or swatches. Small even transparent padding around the symbol.

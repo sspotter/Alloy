@@ -19,3 +19,8 @@ test-temp-repo/
 .env
 
 .firecrawl
+
+.vercel
+.env*.local
+
+/public/

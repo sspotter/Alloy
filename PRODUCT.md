@@ -20,7 +20,7 @@ Showcase the team's branding and engineering capabilities through six projects, 
 Private, measurable AI: permission-aware retrieval, local model improvement with evaluation gates, agent workflows, and product engineering.
 
 ## Brand Commitments
-The user selected Alloy as the parent brand. Existing public branding is pending a coordinated update to the site, film, and future logo. The user accepted an editorial direction with warm off-white, charcoal, restrained green, and large typography.
+The user selected Alloy Tech as the parent brand and approved the Sage/Forest A/T logo. The site header, footer, metadata and favicon use the new identity. The existing film retains its earlier branding until a future film update. The user accepted an editorial direction with warm off-white, charcoal, restrained green, and large typography.
 
 ## Capabilities and Constraints
 Guardian RAG is a working prototype; AutoFT is experimental; KRONOS is a public case study with private implementation; Swarminal is Mazen's project; Nest Invest is a graduation project with private code. Preserve attribution and status. No customer, revenue, performance, or production-readiness claims may be invented.

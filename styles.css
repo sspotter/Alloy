@@ -25,3 +25,6 @@
 .team-grid article{display:flex;flex-direction:column;align-items:flex-start}.team-grid article>p{flex:1}.team-avatar{flex-shrink:0}
 
 .team-grid article{min-width:0}@media(min-width:761px){.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Alloy Tech identity and a larger meeting QR for the prefilled message. */
+.brand-logo{width:52px;height:36px;object-fit:contain;flex-shrink:0}.live-demo{grid-template-columns:252px minmax(0,1fr);gap:32px}.demo-qr img{width:252px;height:252px}.demo-note{grid-column:2}@media(max-width:760px){.brand-logo{width:44px;height:31px}.live-demo{grid-template-columns:1fr;gap:20px}.demo-qr{width:252px}.demo-note{grid-column:1}}

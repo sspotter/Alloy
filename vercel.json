@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "mkdir -p public && cp -r index.html styles.css app.js assets public/",
+  "outputDirectory": "public"
+}
