@@ -10,3 +10,5 @@
 - mark.svg: original geometric typographic mark authored for this site.
 - Hero diagram, terminal example, and forecast curve: original inline SVG/HTML geometry, based on supplied project descriptions. Examples are illustrative, not product screenshots or performance data.
 
+
+- collabs/joe.png, collabs/osama.png, collabs/maz.png: original portraits supplied by the user for Yousef, Osama, and Mazen respectively. Displayed with circular CSS crops; source PNGs unchanged.

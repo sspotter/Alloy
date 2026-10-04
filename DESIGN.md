@@ -53,7 +53,7 @@ Panels use solid surfaces and single borders. Soft offset shadows lift real proj
 
 ## Shapes
 
-Panels use 12px corners; buttons use 5px corners. Tags and status badges use smaller corners. Team initials are circles. Inline SVGs provide a consistent arrow system.
+Panels use 12px corners; buttons use 5px corners. Tags and status badges use smaller corners. Team portraits use circular crops of the supplied PNGs. Inline SVGs provide a consistent arrow system.
 
 ## Components
 
@@ -68,3 +68,5 @@ Project filters update visible cards and the announced count. Detail buttons exp
 - Connect projects to capabilities rather than inventing traction or production claims.
 - Keep source links secondary to project storytelling.
 - Use the established SVG arrow system for CTAs.
+
+Team portraits use the original PNGs in assets/collabs/ in 88px circular frames (72px on mobile), with CSS cropping tailored to the portrait. Individual email buttons sit below the existing profile links.
